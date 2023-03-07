@@ -82,23 +82,23 @@ extension SerialPortExtensions on SerialPort {
     return promiseToFuture(promise);
   }
 
-  /// Closes the serial port.
+  // Closes the serial port.
   Future<void> close() => promiseToFuture(_close());
 
   // Returns a `Future` that resolves with a `SerialPortInfo` containing properties of the port.
   //
   // This feature is available only in secure contexts (HTTPS), in some or all supporting browsers.
-  //
-  // Future<SerialPortInfo?> getInfo() async {
-  //   final promise = _getInfo();
-  //   if (promise == null) {
-  //     return null;
-  //   }
+  
+  Future<SerialPortInfo?> getInfo() async {
+    final promise = _getInfo();
+    if (promise == null) {
+      return null;
+    }
 
-  //   final info = await promiseToFuture<SerialPortInfo?>(promise);
+    final info = await promiseToFuture<SerialPortInfo?>(promise);
 
-  //   return info;
-  // }
+    return info;
+  }
 }
 
 /// Extensions on [WritableStream].
