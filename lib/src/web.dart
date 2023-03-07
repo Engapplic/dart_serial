@@ -89,16 +89,16 @@ extension SerialPortExtensions on SerialPort {
   //
   // This feature is available only in secure contexts (HTTPS), in some or all supporting browsers.
   
-  Future<SerialPortInfo?> getInfo() async {
-    final promise = _getInfo();
-    if (promise == null) {
-      return null;
-    }
+  // Future<SerialPortInfo?> getInfo() async {
+  //   final promise = _getInfo();
+  //   if (promise == null) {
+  //     return null;
+  //   }
 
-    final info = await promiseToFuture<SerialPortInfo?>(promise);
+  //   final info = await promiseToFuture<SerialPortInfo?>(promise);
 
-    return info;
-  }
+  //   return info;
+  // }
 }
 
 /// Extensions on [WritableStream].
